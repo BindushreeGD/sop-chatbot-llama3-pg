@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NRI Banking Assistant Design System - Trustworthy, warm, and modern */
+
+@layer base {
+  :root {
+    /* Core Background Colors */
+    --background: 240 30% 98%;
+    --foreground: 220 15% 15%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    /* Popover Colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary Banking Blue - Trust & Reliability */
+    --primary: 218 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 218 85% 65%;
+
+    /* Secondary Warm Accent - Friendliness */
+    --secondary: 35 85% 95%;
+    --secondary-foreground: 35 45% 25%;
+    --secondary-warm: 35 85% 58%;
+
+    /* Muted & Subtle Colors */
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent Colors */
+    --accent: 260 50% 96%;
+    --accent-foreground: 260 25% 25%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 85% 50%;
+    --warning-foreground: 38 25% 15%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Border & Input */
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 218 70% 45%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Banking-specific Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 70% 45%), hsl(260 65% 55%));
+    --gradient-warm: linear-gradient(135deg, hsl(35 85% 58%), hsl(45 95% 68%));
+    --gradient-trust: linear-gradient(180deg, hsl(240 30% 98%), hsl(220 15% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(220 15% 15% / 0.15);
+    --shadow-banking: 0 8px 30px -12px hsl(218 70% 45% / 0.3);
+    --shadow-warm: 0 6px 25px -10px hsl(35 85% 58% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Transitions & Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--gradient-trust);
+  }
+}
+
+@layer components {
+  /* Banking Card Styles */
+  .banking-card {
+    @apply bg-card rounded-2xl shadow-[var(--shadow-soft)] border border-border/50;
+    background: var(--gradient-card);
+  }
+
+  .banking-card-hover {
+    @apply banking-card transition-all duration-300 hover:shadow-[var(--shadow-banking)] hover:-translate-y-1;
+  }
+
+  /* Chat Bubble Styles */
+  .chat-bubble-bot {
+    @apply bg-card text-card-foreground rounded-3xl rounded-bl-none shadow-[var(--shadow-soft)] max-w-lg;
+    background: var(--gradient-card);
+  }
+
+  .chat-bubble-user {
+    @apply text-primary-foreground rounded-3xl rounded-br-none max-w-lg shadow-[var(--shadow-banking)];
+    background: var(--gradient-primary);
+  }
+
+  /* Button Variants */  
+  .btn-banking {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-[var(--shadow-soft)];
+    background: var(--gradient-primary);
+    @apply text-primary-foreground hover:shadow-[var(--shadow-banking)] hover:-translate-y-0.5;
+  }
+
+  .btn-warm {
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-300;
+    background: var(--gradient-warm);
+    @apply text-secondary-foreground hover:shadow-[var(--shadow-warm)] hover:-translate-y-0.5;
+  }
+
+  /* Status Indicators */
+  .status-pending {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background-color: hsl(var(--warning) / 0.1);
+    color: hsl(var(--warning));
+    border: 1px solid hsl(var(--warning) / 0.3);
+  }
+
+  .status-processing {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background-color: hsl(var(--primary) / 0.1); 
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+
+  .status-success {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background-color: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.3);
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
