@@ -19,4 +19,8 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: 'dist',
+  },
+  base: './', // <-- 🔥 This line is crucial for Vercel deployment
 })
